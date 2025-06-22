@@ -1,0 +1,208 @@
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: white;
+}
+.resume-btn {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  background-color: #ff7b00;
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.resume-btn:hover {
+  background-color: #e56e00;
+  transform: scale(1.05);
+}
+
+canvas#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.orange-text {
+  color: #ff7b00;
+}
+
+#typed-tagline {
+  font-size: 1.4rem;
+  color: white;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  min-height: 1.8em;
+}
+
+/* Sections */
+.section {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 123, 0, 0.2);
+}
+
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0; /* overrides large top padding */
+}
+
+#hero h1 {
+  font-size: 3rem; /* or increase further like 4rem if needed */
+  margin-bottom: 10px;
+}
+.scroll-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #ff7b00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.scroll-link .arrow {
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  animation: bounce 2s infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+
+
+/* Headings */
+.section h2 {
+  font-size: 2.5rem;
+  color: #ff7b00;
+  margin-bottom: 20px;
+}
+
+.section p,
+.section li {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Skills */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skills-list li {
+  background: rgba(255, 123, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #ff7b00;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-list li:hover {
+  box-shadow: 0 0 8px 2px #ff7b00;
+  border-color: #fff;
+  cursor: pointer;
+}
+
+
+/* Projects */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  width: 280px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.project-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ff7b00;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+
+/* Links */
+a {
+  color: #ff7b00;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
